@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "45d5620a-df4f-4b2e-9abd-ccbb97e9984c",
+		"name": "Document Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3351398"
+	},
+	"item": [
+		{
+			"name": "Upload",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/ricardorado9/Downloads/TECH-IAAS-ENGAGE-10-tendencias-en.pdf"
+						},
+						{
+							"key": "metadata",
+							"value": "{{metadataJson1}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/{{api}}/upload",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{api}}",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": \"user\",\n    \"name\": \"sample.pdf\",\n    \"tags\": [\n        \"report\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/{{api}}/search?page=0&size=2&sort=userName,asc&sort=createdAt,desc",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{api}}",
+						"search"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "2"
+						},
+						{
+							"key": "sort",
+							"value": "userName,asc"
+						},
+						{
+							"key": "sort",
+							"value": "createdAt,desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/{{api}}/download/{{document_id}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{api}}",
+						"download",
+						"{{document_id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
