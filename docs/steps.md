@@ -16,9 +16,10 @@ docker compose  -f ./docker/docker-compose.yml  up --build  -d
 
 ### 📌 3. Test with the  Postman collections (docs/collection)
 
-📄 Collection [Document API Local.postman_environment.json](collections/Document_Management_API.postman_collection.json)
+📄 Environment  [Document API Local.postman_environment.json](collections/Document_Management_API.postman_collection.json)
 
-📄 Environment [Document Management API.postman_collection.json](collections/Document_API_Local.postman_environment.json)
+📄 Collection [Document Management API.postman_collection.json](collections/Document_API_Local.postman_environment.json)
+
 ### 📌 4. Verify Database
 
 Connect
